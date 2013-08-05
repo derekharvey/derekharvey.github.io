@@ -1,0 +1,228 @@
+{% extends "layout.html.twig" %}
+
+{% block meta %}
+    <title>Page not found</title>
+{% endblock %}
+
+{% block content %}
+
+	<style>
+
+		#notfound {
+			position: relative;
+		}
+
+		#notfound #heading {
+			position: relative;
+			font-size: 160px;
+			margin: 0;
+			padding: 0;
+			z-index: 20;
+			text-align: center;
+		}
+
+		#notfound #subheading {
+			position: relative; font-size: 80px; line-height: 1.2; margin: 0; padding: 0;
+			z-index: 20;
+			text-align: center;
+		}
+
+		#notfound #copy {
+			position: relative;
+			display: block;
+			z-index: 20;
+			text-align: center;
+			font-size: 30px;
+			line-height: 2;
+		}
+
+		#main-container {
+			background: black;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.rainbowText {
+		  	color:transparent;
+		  	-webkit-background-clip: text;
+		}
+
+		.rainbowText {
+			background-image:
+			-webkit-gradient(linear, left top, right top,
+				color-stop(0, #f22),
+				color-stop(0.15, #f2f),
+				color-stop(0.3, #22f),
+				color-stop(0.45, #2ff),
+				color-stop(0.6, #2f2),
+				color-stop(0.75, #2f2),
+				color-stop(0.9, #ff2),
+				color-stop(1, #f22)
+			);
+		}
+
+		.rainbowText2 {
+			background-image:
+			-webkit-gradient(linear, left top, right top,
+				color-stop(0, #22f),
+				color-stop(0.15, #f22),
+				color-stop(0.3, #2f2),
+				color-stop(0.45, #ff2),
+				color-stop(0.6, #2ff),
+				color-stop(0.75, #ff2),
+				color-stop(0.9, #f22),
+				color-stop(1, #f2f)
+			);
+		}
+
+		.rainbowText3 {
+			background-image:
+			-webkit-gradient(linear, left top, right top,
+				color-stop(0, #f2f),
+				color-stop(0.15, #ff2),
+				color-stop(0.3, #2ff),
+				color-stop(0.45, #f2f),
+				color-stop(0.6, #2ff),
+				color-stop(0.75, #f2f),
+				color-stop(0.9, #f22),
+				color-stop(1, #f2f)
+			);
+
+		}
+
+		.star {
+			position: absolute;
+			color: #fff;
+			z-index: 10;
+		}
+
+		#main article {
+			width: 100%;
+		}
+
+	</style>
+
+	<div id="notfound">
+	    <h1 id="heading" class="rainbowText">404</h1>
+    	<h2 id="subheading" class="rainbowText rainbowText2">Page not found</h2>
+    	<p id="copy" class="rainbowText rainbowText3">The page you are looking for doesn't exist or can't be found.</p>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <script>
+
+		function randomFromTo(from, to){
+			return Math.floor(Math.random() * (to - from + 1) + from);
+		}
+
+    	var windowProxy, newpos, heading, subheading, copy, container, containerWidth, containerHeight, containerOffset;
+
+		$(document).ready(function() {
+			container = $('#main-container');
+			updateWindow();
+			$(window).resize(updateWindow);
+		});
+
+		function updateWindow()
+		{
+			containerOffset = container.offset();
+			containerWidth  = container.width();
+			containerHeight = container.height();
+
+			initAnimate();
+		}
+
+		function initAnimate()
+		{
+			if (!$('.star').length) {
+				for (var i = 0; i < 150; i++) {
+					positionx = randomFromTo(-100, containerWidth + 100)
+					positiony = randomFromTo(-100, containerHeight + 100);
+
+		    		$('<div class="star">☆</star>').css({ left: positionx, top: positiony, color: randomColor() }).appendTo(container);
+		    	}
+		    	animateStars();
+			}
+		}
+
+		function animateStars() {
+			var delay = 0;
+			$('.star').each(function() {
+				positionx = randomFromTo(0, containerWidth - 0)
+				positiony = randomFromTo(0, containerHeight - 0);
+
+				var thisdelay = delay;
+				if ($(this).is(':animated')) {
+					$(this).stop();
+					thisdelay = 0;
+				}
+
+				$(this).delay(thisdelay).animate({ left: positionx, top: positiony}, 30000, 'easeOutExpo', animateStars);
+
+				delay += 20;
+			})
+		}
+
+		function randomColor() {
+			return '#' + Math.floor(Math.random() * 16777215).toString(16);
+		}
+
+		$(document).mousemove(function(e) {
+
+			newpos = {
+				heading: {
+					x: 0,
+					y: 0
+				},
+				subheading: {
+					x: 0,
+					y: 0
+				},
+				copy: {
+					x: 0,
+					y: 0
+				},
+				star: {
+					x: 0,
+					y: 0
+				}
+			};
+
+	    	windowProxy = {
+	    		w: $(window).width(),
+	    		h: $(window).height()
+	    	}
+
+			heading 	= $('#heading');
+			subheading  = $('#subheading');
+			copy 		= $('#copy');
+			star 		= $('.star');
+
+			var cursor = {
+				x: (e.pageX / windowProxy.w) * 2 - 1,
+				y: (e.pageY / windowProxy.h) * 2 - 1
+			}
+
+			newpos.heading.x = parseInt(cursor.x * (containerWidth / 4) + newpos.heading.x, 10);
+			newpos.heading.y = parseInt(cursor.y * 40 + newpos.heading.y, 10);
+
+			newpos.subheading.x = parseInt(cursor.x * (containerWidth / 6) + newpos.subheading.x, 10);
+			newpos.subheading.y = parseInt(cursor.y * 20 + newpos.subheading.y, 10);
+
+			newpos.copy.x = parseInt(cursor.x * (containerWidth / 8) + newpos.copy.x, 10);
+			newpos.copy.y = parseInt(cursor.y * 10 + newpos.copy.y, 10);
+
+			heading.css({top: newpos.heading.y, left: newpos.heading.x});
+			subheading.css({top: newpos.subheading.y, left: newpos.subheading.x});
+			copy.css({top: newpos.copy.y, left: newpos.copy.x});
+
+		});
+
+    </script>
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}

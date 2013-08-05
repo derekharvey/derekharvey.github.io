@@ -1,0 +1,23 @@
+{% extends "layout.html.twig" %}
+
+{% set active = 'testimonials' %}
+
+{% block meta %}
+    <title>Testimonials, Derek Harvey, Guitar Lessons in Northampton</title>
+    <meta name="description" content="Mobile Guitar Tutor Testimonials, Beginner, Intermediate Guitar Lesson, Acoustic Guitar Lesson, Acoustic Guitar Lesson, Electric Guitar Lesson">
+    <meta name="keywords" content="Guitar Lessons, Guitar Lesson, Guitar Lesson Northampton, Guitar Tuition, Guitar Tuition Northampton, Northampton UK, Northampton, UK, Music, Learn to play, Learn to play Guitar, Learning to play Guitar, Guitar, Guitars, Learn Guitar, Guitar, Guitar Teacher, Guitar, Lessons, Northampton, Northants, Northamptonshire, Recreational Guitar Tutor, Recreational, Electric Guitar Lessons, Derek Harvey, Derek, Harvey">
+{% endblock %}
+
+{% block content %}
+  <h1>Testimonials</h1>
+  <h2>Below are some testimonials from some of my students.</h2>
+  <hr>
+  {% for testimonial in testimonials %}
+    <blockquote class="testimonial">
+      <p>&ldquo;{{ testimonial.testimonial }}&rdquo;</p>
+      <footer>- {{ testimonial.author }}. <small>{{ testimonial.date|date("F jS Y") }}</small> </footer>
+    </blockquote>
+    <hr/>
+  {% endfor %}
+  <h4>Current student? Send me your testimonial and I'll post it here!</h4>
+{% endblock %}

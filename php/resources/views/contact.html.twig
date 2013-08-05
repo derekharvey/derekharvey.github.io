@@ -1,0 +1,43 @@
+{% extends "layout.html.twig" %}
+
+{% set active = "contact" %}
+
+{% block meta %}
+  <title>Contact, Derek Harvey, Guitar Lessons in Northampton</title>
+  <meta name="description" content="Mobile Guitar Tutor Contact, Beginner, Intermediate Guitar Lesson, Acoustic Guitar Lesson, Acoustic Guitar Lesson, Electric Guitar Lesson">
+  <meta name="keywords" content="Guitar Lessons, Guitar Lesson, Guitar Lesson Northampton, Guitar Tuition, Guitar Tuition Northampton, Northampton UK, Northampton, UK, Music, Learn to play, Learn to play Guitar, Learning to play Guitar, Guitar, Guitars, Learn Guitar, Guitar, Guitar Teacher, Guitar, Lessons, Northampton, Northants, Northamptonshire, Recreational Guitar Tutor, Recreational, Electric Guitar Lessons, Derek Harvey, Derek, Harvey">
+{% endblock %}
+
+{% block content %}
+  <h1>Contact me</h1>
+  <p>You can contact me by using my email address, form below or you can phone me on <span class="telephone telephone-black"></span></p>
+  <div id="wufoo-m7x3r3">
+    <iframe id="wufooFormm7x3r3" height="408" allowtransparency="true" frameborder="0" scrolling="no" style="width:100%;border:none" src="http://lotsofcode.wufoo.com/embed/m7x3r3/def/embedKey=m7x3r3256920&amp;referrer=http%3Awuslashwuslashderekharvey.co.ukwuslashbooking-prices.html">&lt;a href="http://lotsofcode.wufoo.com/forms/m7x3r3/" title="html form"&gt;Fill out my Wufoo form!&lt;/a&gt;</iframe>
+  </div>
+  <script src="//wufoo.com/scripts/embed/form.js"></script>
+  <script type="text/javascript">
+    var m7x3r3;(function(d, t) {
+        var s = d.createElement(t), options = {
+            'userName':'lotsofcode',
+            'formHash':'m7x3r3',
+            'autoResize':true,
+            'height':'495',
+            'async':true,
+            'header':'show'
+        };
+        s.src = '//wufoo.com/scripts/embed/form.js';
+        s.onload = s.onreadystatechange = function() {
+        var rs = this.readyState;
+        if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+        try {
+            m7x3r3 = new WufooForm();
+            m7x3r3.initialize(options);
+            m7x3r3.display();
+        } catch (e) {
+        }};
+        var scr = d.getElementsByTagName(t)[0],
+        par = scr.parentNode;
+        par.insertBefore(s, scr);
+    })(document, 'script');
+  </script>
+{% endblock %}

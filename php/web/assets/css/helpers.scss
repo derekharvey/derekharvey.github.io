@@ -1,0 +1,74 @@
+/* helpers.css */
+.ir {
+  display: block;
+  border: 0;
+  text-indent: -999em;
+  overflow: hidden;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr;
+  *line-height: 0;
+}
+.ir br {
+  display: none;
+}
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+.invisible {
+  visibility: hidden;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
+/* tel numbers */
+
+.telephone-black {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAASAQMAAADlmIt9AAAABlBMVEUAAAAAAAClZ7nPAAAAAXRSTlMAQObYZgAAAGVJREFUCJljYKAAyNVV/nzAzC/HVvGBwZjtjLQBu+RmvrMzGIx5zhgYcEtulgOyzXkqDB8wS84zu/OBwVriTIIBM//mtLdANWA24+Y6kHqDM4cNmCU3swHZcgYVBx/wnwebSQEAAC1NIj1m9ygtAAAAAElFTkSuQmCC);
+  width: 88px;
+  height: 18px;
+  display: inline-block;
+}
+
+.telephone-white {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAASAQMAAADlmIt9AAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAAGVJREFUCJljYKAAyNVV/nzAzC/HVvGBwZjtjLQBu+RmvrMzGIx5zhgYcEtulgOyzXkqDB8wS84zu/OBwVriTIIBM//mtLdANWA24+Y6kHqDM4cNmCU3swHZcgYVBx/wnwebSQEAAC1NIj1m9ygtAAAAAElFTkSuQmCC);
+  width: 88px;
+  height: 18px;
+  display: inline-block;
+}
+
+.telephone-white-large {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG4AAAASAQMAAACAdXkCAAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAAJhJREFUGJVjYKAeYJN/fPznBwYJOX6Gg40PGPgZ0hKkJRgsjCUbDx82YJBsyDGQ4GGoSNxw+FiaBIPBgWMJBhIMEokz284YGzAYHGw+kFDAIGHcz3PG8AGDwWG2hANAWdmZM8Cyx3gMG3gYJBg33H9jJsEg2cNjzADkKm44ADKKX4ItjRmo2FiyAWQRmwTzMcYPDHVQZ5ACAI8nLumGXn1ZAAAAAElFTkSuQmCC);
+  width: 110px;
+  height: 18px;
+  display: inline-block;
+}

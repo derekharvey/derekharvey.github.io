@@ -1,0 +1,91 @@
+{%
+  set navigation_top = [
+    ['about', 'About'],
+    ['testimonials', 'Testimonials'],
+    ['prices', 'Prices'],
+    ['contact', 'Contact']
+  ]
+%}
+{%
+  set navigation_footer = [
+    ['sitemap', 'Sitemap'],
+    ['guitar_lessons_northampton', 'Guitar Lessons Northampton'],
+    ['mobile_guitar_lessons', 'Mobile Guitar Lessons'],
+    ['free_guitar_lessons', 'Free Guitar Lessons']
+  ]
+%}
+{% set active = active|default(null) %}
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7 ie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8 ie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9 ie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  {% block meta %}{% endblock %}
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="Del Harvey">
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link href='http://fonts.googleapis.com/css?family=Norican|Imprima' rel='stylesheet' type='text/css'>
+  <link href="{{ app.request.basepath }}/assets/css/compressed.css" rel="stylesheet" type="text/css" media="all">
+  {% include '_analytics.html.twig' %}
+</head>
+<body>
+    <div id="header-container">
+        <header class="wrapper clearfix">
+            <div id="title">
+                <a class="title" href="/" title="Derek Harvey" rel="home">Derek Harvey</a>
+                <a class="strap" href="/mobile-guitar-lessons.html" title="Mobile Guitar Lessons Northampton" rel="home">Mobile Guitar Tutor Northampton</a>
+                <span class="number">
+                  <span class="telephone telephone-white-large"></span>
+                </span>
+            </div>
+            <nav>
+                <ul id="menu-top" class="menu clearfix">
+                  {% for item in navigation_top %}
+                    <li class="menu-item{% if item[0] == active %} current_page_item{% endif %}"><a href="{{ item[0] }}.html">{{ item[1] }}</a></li>
+                  {% endfor %}
+                </ul>
+            </nav>
+        </header>
+        </div>
+        <div id="main-container">
+            <div id="main" class="wrapper clearfix">
+                <article>{% block content %}Default content{% endblock %}</article>
+                {% block sidebar %}
+                <aside>
+                    <ul class="sidebar">
+                        <li id="text-6" class="widget-container widget_text">
+                            <h3 class="widget-title">Contact me</h3>
+                            <div class="textwidget">
+                                You can contact me by using the <a href="/contact.html">contact form</a>.
+                                Or ... you can phone me directly on: <span class="telephone telephone-white-large"></span>
+                            </div>
+                            </li>
+                            <li id="text-5" class="widget-container widget_text">
+                                <h3 class="widget-title">Online Booking Requests </h3>
+                                <div class="textwidget">If you would like to request a date to take guitar lessons then you can do so by using our online contact form</div>
+                            </li>
+                    </ul>
+                </aside>
+                {% endblock %}
+            </div>
+        </div>
+        <div id="footer-container" class="clearfix">
+            <footer class="wrapper">
+                <div class="menu-header">
+                    <ul id="menu-bottom" class="menu">
+                      {% for item in navigation_footer %}
+                        <li class="menu-item{% if item[0] == active %} current_page_item{% endif %}"><a href="{{ item[0] }}.html">{{ item[1] }}</a></li>
+                      {% endfor %}
+                    </ul>
+                    <a href="/" title="Derek Harvey" rel="home">Derek Harvey</a>
+                    <a href="http://twitter.com/derekharvey" title="Derek Harvey Twitter" rel="twitter" target="_blank">@derekharvey</a>
+                </div>
+                    <a href="http://pcrepair.derekharvey.co.uk">PC Repair Northampton</a><br/>
+                    <a href="http://lotsofcode.com" target="_blank">Web Developer</a>
+            </footer>
+        </div>
+    </body>
+</html>

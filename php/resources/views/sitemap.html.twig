@@ -1,0 +1,18 @@
+{% extends "layout.html.twig" %}
+
+{% set active = "sitemap" %}
+
+{% block meta %}
+    <title>Sitemap</title>
+{% endblock %}
+
+{% block content %}
+    <h1 class="entry-title">Sitemap </h1>
+    <div class="entry-content">
+        <ul>
+          {% for item in navigation %}
+            <li class="menu-item{% if item[0] == active %} current_page_item{% endif %}"><a href="{{ url(item[0]) }}">{{ item[1] }}</a></li>
+          {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

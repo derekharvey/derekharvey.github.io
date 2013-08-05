@@ -1,0 +1,16 @@
+{
+  "name": "derekharvey.co.uk",
+  "description": "Del Harvey",
+  "version": "0.0.1",
+  "homepage": "http://derekharvey.co.uk",
+  "author": "Del Harvey",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lotsofcode/derekharvey.co.uk"
+  },
+  "devDependencies": {
+    "grunt": "0.3.17",
+    "grunt-css": "0.3.2",
+    "grunt-sass": "0.2.5"
+  }
+}

@@ -1,0 +1,13 @@
+# crucial to allow the install.sh script to update Silex
+unset GIT_DIR
+GIT_WORK_TREE=/var/www/derekharvey.co.uk/current/ git checkout -f
+
+echo "[post-recieve] Checked out files";
+
+# I like to do a sanity check of the files as there's no output from git checkout
+ls /var/www/derekharvey.co.uk/current/
+
+echo "[post-recieve] Releasing code into the wild";
+
+# execute an install script seperating project logic from git
+/var/www/derekharvey.co.uk/release.sh

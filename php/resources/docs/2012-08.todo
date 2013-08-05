@@ -1,0 +1,28 @@
+  Todo:  
+ ✔ Google Analytics @priority @done (12-10-17 21:36)
+ ✔ Cleanup the SEO pages @priority @done (12-10-19 00:10)
+ ☐ Change colorschemes @priority (http://colorschemedesigner.com/)
+ ✔ Cleanup markup (h1's, classnames etc) @done (12-10-19 00:10)
+ ☐ Cleanup CSS (using less syntax)
+ ☐ Use more HTML5 elements whereever possible
+ ☐ Sitemap meta tags
+ ✔ Image sprite for all graphics (telephone numbers) @done (12-10-19 00:10)
+ ✔ CSS compression @done (12-10-19 00:10)
+ ✔ page speed testing, enable mod_headers in apache for image caching headers etc. @done (12-10-19 00:11)
+
+ Testing:
+ ☐ IE
+ ☐ Firefox
+ ☐ Chrome
+ ☐ iPhone
+ ☐ Android mobile
+ ☐ Android tablet
+
+Primary Color:
+3016B0  3C2D84  190773  624AD8  8170D8
+
+Secondary Color A:
+FFF700  BFBB30  A6A000  FFF940  FFFB73
+
+Secondary Color B:
+FFA200  BF8B30  A66A00  FFBA40  FFCC73

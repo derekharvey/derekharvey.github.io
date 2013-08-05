@@ -1,0 +1,8 @@
+*.log
+.sass-cache
+.DS_Store
+vendor/
+composer.phar
+node_modules
+resources/cache/
+resources/log/*.log
